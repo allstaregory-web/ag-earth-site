@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KBhXCK8QS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0KBhXCK8QS');
+  </script>
   <title>Bearingfield &mdash; Hold the Bearing. Create the Field.</title>
-  <meta name="description" content="Bearingfield is a governance-first AI architecture built in public. Orientation before execution. The field is real." />
+  <meta name="description" content="Bearingfield is a governance-first AI architecture built in public. Three episodes. 207 slides. 14 tracks. The field is real." />
   <meta property="og:title" content="Bearingfield &mdash; Hold the Bearing. Create the Field." />
-  <meta property="og:description" content="A governance-first AI architecture built in public. 191 slides. 14 tracks. The field is real." />
-  <meta property="og:image" content="assets/images/ep1_thumb.png" />
+  <meta property="og:description" content="A governance-first AI architecture built in public. Three episodes. 207 slides. 14 tracks. The field is real." />
+  <meta property="og:image" content="assets/images/ep3_thumb.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
@@ -206,6 +214,16 @@
           <div class="episode-title">The Bearing</div>
         </div>
       </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode3.html">
+          <img src="assets/images/ep3_thumb.png" alt="Episode 3 - The Field" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 3 &mdash; March 24, 2026</span>
+          <div class="episode-title">The Field</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -300,7 +318,7 @@
   <div class="section" id="library">
     <p class="section-label reveal">The Library</p>
     <h2 class="section-title reveal">Visual Architecture</h2>
-    <p class="section-body reveal">Complete slide decks generated from the system&rsquo;s own transcripts. 191 pages across 13 volumes. Click to explore.</p>
+    <p class="section-body reveal">Complete slide decks generated from the system&rsquo;s own transcripts. 207 pages across 15 volumes. Click to explore.</p>
     <div class="library-grid">
       <div class="library-card reveal zoomable-card" data-prefix="the_bearingfield_doctrine_1" data-pages="16">
         <img src="assets/slides/the_bearingfield_doctrine_1_p1.jpg" alt="The Bearingfield Doctrine" />
@@ -314,6 +332,20 @@
         <div class="library-card-overlay">
           <div class="library-card-title">The Bearing &mdash; Episode 2</div>
           <div class="library-card-pages">8 slides</div>
+        </div>
+      </div>
+      <div class="library-card reveal zoomable-card" data-prefix="bearingfield_1" data-pages="9">
+        <img src="assets/slides/bearingfield_1_p1.png" alt="The Field &mdash; Episode 3" />
+        <div class="library-card-overlay">
+          <div class="library-card-title">The Field &mdash; Episode 3</div>
+          <div class="library-card-pages">9 slides</div>
+        </div>
+      </div>
+      <div class="library-card reveal zoomable-card" data-prefix="bearingfield_blueprint" data-pages="7">
+        <img src="assets/slides/bearingfield_blueprint_p1.png" alt="The Field Blueprint" />
+        <div class="library-card-overlay">
+          <div class="library-card-title">The Field Blueprint</div>
+          <div class="library-card-pages">7 slides</div>
         </div>
       </div>
       <div class="library-card reveal zoomable-card" data-prefix="the_physics_of_ai_motivation" data-pages="15">
@@ -543,7 +575,7 @@
     <div class="footer-brand">BEARINGFIELD</div>
     <div class="footer-tagline">Hold the bearing. Create the field.</div>
     <div class="footer-links">
-      <a href="https://www.youtube.com/watch?v=Os09YLJyjIA" target="_blank">YouTube</a>
+      <a href="https://www.youtube.com/watch?v=vy40cA1tvNo" target="_blank">YouTube</a>
       <a href="https://x.com/uplink_earth" target="_blank">X</a>
       <a href="mailto:ag-earth@ag-earth.com">Contact</a>
     </div>
@@ -590,7 +622,7 @@
     var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img'),lbNav=document.getElementById('lightbox-nav'),lbCounter=document.getElementById('lb-counter'),lbBg=document.getElementById('lightbox-bg');
     var currentDeck=null,currentPage=1,totalPages=0;
     function closeLightbox(){lb.classList.remove('active');lbNav.classList.remove('active');currentDeck=null;}
-    function buildSlidePath(prefix,page){if(prefix==='bearing_page')return'assets/slides/bearing_page_'+page+'.jpg';return'assets/slides/'+prefix+'_p'+page+'.jpg';}
+    function buildSlidePath(prefix,page){if(prefix==='bearing_page')return'assets/slides/bearing_page_'+page+'.jpg';if(prefix==='bearingfield_1'||prefix==='bearingfield_blueprint')return'assets/slides/'+prefix+'_p'+page+'.png';return'assets/slides/'+prefix+'_p'+page+'.jpg';}
     function showSlide(page){if(page<1||page>totalPages)return;currentPage=page;lbImg.src=buildSlidePath(currentDeck,currentPage);lbCounter.textContent=currentPage+' / '+totalPages;}
     document.querySelectorAll('.zoomable').forEach(function(img){img.addEventListener('click',function(){currentDeck=null;lbImg.src=img.src;lbImg.alt=img.alt;lbNav.classList.remove('active');lb.classList.add('active');});});
     document.querySelectorAll('.zoomable-card').forEach(function(card){card.addEventListener('click',function(){currentDeck=card.dataset.prefix;totalPages=parseInt(card.dataset.pages);currentPage=1;showSlide(1);lbNav.classList.add('active');lb.classList.add('active');});});
@@ -607,7 +639,7 @@
     var currentTrackIdx=-1,isPlaying=false;
     var radioPlayer=document.getElementById('radio-player'),radioTitle=document.getElementById('radio-track-title'),radioPlayBtn=document.getElementById('radio-play'),radioProgress=document.getElementById('radio-progress'),radioTime=document.getElementById('radio-time');
     function fmt(s){var m=Math.floor(s/60);var sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-    function playTrack(idx){document.querySelectorAll('.track-card').forEach(function(c){c.classList.remove('playing')});currentTrackIdx=idx;var track=playlist[idx];audio.src=track.src;audio.play();isPlaying=true;radioTitle.textContent=track.title;radioPlayBtn.innerHTML='&#9646;&#9646;';radioPlayer.classList.add('active');document.body.classList.add('radio-active');var el=document.querySelector('[data-track="'+idx+'"]');if(el)el.classList.add('playing');}
+    function playTrack(idx){if(idx===currentTrackIdx&&isPlaying){audio.pause();isPlaying=false;radioPlayBtn.innerHTML='&#9654;';var el=document.querySelector('[data-track="'+idx+'"]');if(el)el.classList.remove('playing');return;}document.querySelectorAll('.track-card').forEach(function(c){c.classList.remove('playing')});if(idx===currentTrackIdx&&!isPlaying){audio.play();isPlaying=true;radioPlayBtn.innerHTML='&#9646;&#9646;';var el=document.querySelector('[data-track="'+idx+'"]');if(el)el.classList.add('playing');return;}currentTrackIdx=idx;var track=playlist[idx];audio.src=track.src;audio.play();isPlaying=true;radioTitle.textContent=track.title;radioPlayBtn.innerHTML='&#9646;&#9646;';radioPlayer.classList.add('active');document.body.classList.add('radio-active');var el=document.querySelector('[data-track="'+idx+'"]');if(el)el.classList.add('playing');}
     function togglePlay(){if(currentTrackIdx===-1){playTrack(0);return;}if(isPlaying){audio.pause();isPlaying=false;radioPlayBtn.innerHTML='&#9654;';}else{audio.play();isPlaying=true;radioPlayBtn.innerHTML='&#9646;&#9646;';}}
     function nextTrack(){playTrack((currentTrackIdx+1)%playlist.length);}
     function prevTrack(){if(audio.currentTime>3){audio.currentTime=0;return;}playTrack((currentTrackIdx-1+playlist.length)%playlist.length);}
