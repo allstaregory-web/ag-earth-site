@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KBWXCK8QS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0KBWXCK8QS');
+  </script>
+  <title>Week 1: The Hook &mdash; Bearingfield: A New Compass</title>
+  <meta name="description" content="Week 1 of Bearingfield — The Hook. 9 episodes. The bearing, the field, friction, voidcartography, the crew, the minimum solid, and the blueprint." />
+  <meta property="og:title" content="Week 1: The Hook &mdash; Bearingfield" />
+  <meta property="og:description" content="9 episodes. Something is happening. The hook is set." />
+  <meta property="og:image" content="assets/images/ep7_thumb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--navy:#0a1628;--navy-mid:#0e1c30;--gold:#c9a84c;--gold-bright:#e8c55a;--gold-glow:rgba(201,168,76,0.15);--border:rgba(201,168,76,0.18);--text:#9aabbc;--text-bright:#cdd8e4;--white:#edf2f7}
+    html{scroll-behavior:smooth}
+    body{background:var(--navy);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;line-height:1.6}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at top,rgba(201,168,76,0.08),transparent 38%),radial-gradient(circle at 80% 20%,rgba(201,168,76,0.05),transparent 26%);pointer-events:none}
+    nav{position:sticky;top:0;z-index:100;padding:0.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);background:rgba(10,22,40,0.88);border-bottom:1px solid var(--border)}
+    .nav-brand{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;text-shadow:0 0 20px rgba(201,168,76,0.4)}
+    .nav-links{display:flex;gap:1.8rem;list-style:none}
+    .nav-links a{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--text);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;transition:all 0.3s}
+    .nav-links a:hover{color:var(--gold);opacity:1}
+    .hero{max-width:1100px;margin:0 auto;padding:5rem 2rem 2rem;text-align:center}
+    .eyebrow{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;opacity:0.78}
+    .hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:1rem}
+    .hero-title .gold{color:var(--gold);text-shadow:0 0 30px rgba(201,168,76,0.38)}
+    .hero-body{font-size:1.05rem;line-height:1.85;max-width:700px;margin:0 auto;color:var(--text)}
+    .section{max-width:1100px;margin:0 auto;padding:2rem 2rem 4rem}
+    .section-label{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;opacity:0.72}
+    .section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:var(--white);margin-bottom:1rem;line-height:1.2}
+    .episodes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:2rem}
+    .episode-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.3s}
+    .episode-card:hover{border-color:var(--gold);box-shadow:0 0 30px var(--gold-glow);transform:translateY(-3px)}
+    .episode-thumb-wrap{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000}
+    .episode-thumb-wrap img{width:100%;height:100%;object-fit:cover;transition:opacity 0.3s}
+    .episode-thumb-wrap:hover img{opacity:0.75}
+    .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(201,168,76,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(201,168,76,0.4);transition:all 0.3s}
+    .play-btn::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent var(--navy);margin-left:3px}
+    .episode-thumb-wrap:hover .play-btn{background:var(--gold-bright);transform:translate(-50%,-50%) scale(1.08)}
+    .episode-info{padding:1.1rem 1.4rem}
+    .episode-tag{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;opacity:0.7}
+    .episode-title{font-size:0.95rem;font-weight:600;color:var(--white);margin-top:0.3rem}
+    .episode-desc{font-size:0.8rem;color:var(--text);margin-top:0.3rem;opacity:0.6;line-height:1.6}
+    .pull-quote{max-width:800px;margin:3rem auto;padding:1.5rem 1.7rem;border-left:3px solid var(--gold);background:rgba(14,28,48,0.62);font-family:'Playfair Display',serif;font-size:1.3rem;line-height:1.55;color:var(--white);text-align:left}
+    footer{padding:2.8rem 2rem 3.5rem;text-align:center;border-top:1px solid var(--border);margin-top:1rem}
+    .footer-brand{font-family:'Space Mono',monospace;font-size:1rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.55rem}
+    .footer-tagline{font-size:0.92rem;color:var(--white);margin-bottom:1rem}
+    .footer-links{display:flex;justify-content:center;gap:1.3rem;flex-wrap:wrap}
+    .footer-links a{font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;color:var(--text);text-decoration:none;text-transform:uppercase}
+    .footer-links a:hover{color:var(--gold)}
+    .footer-copy{margin-top:1rem;font-size:0.82rem;color:var(--text)}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.7s ease,transform 0.7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:768px){nav{padding:0.7rem 1rem}.nav-links{display:none}.hero{padding:4rem 1.2rem 2rem}.section{padding:1.5rem 1.2rem 3rem}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-brand" href="index.html">BEARINGFIELD</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#music">Music</a></li>
+      <li><a href="index.html#library">Library</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <p class="eyebrow reveal">Week 1 &bull; March 23&ndash;29, 2026</p>
+    <h1 class="hero-title reveal">The <span class="gold">Hook</span></h1>
+    <p class="hero-body reveal">Mystery. Curiosity. Something is happening. A bearing is taken. A field emerges. Friction is infrastructure. Absence is territory. A machine is assembled. The minimum solid forms. The blueprint is on the table.</p>
+  </div>
+
+  <div class="section">
+    <p class="section-label reveal">Episodes</p>
+    <h2 class="section-title reveal">9 episodes. One week. The foundation.</h2>
+    <div class="episodes-grid">
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode1.html">
+          <img src="assets/images/ep1_thumb.png" alt="Episode 1" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 1 &mdash; March 23</span>
+          <div class="episode-title">Something Is Happening</div>
+          <div class="episode-desc">The teaser. One question. No answers yet.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode2.html">
+          <img src="assets/images/ep2_thumb.png" alt="Episode 2" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 2 &mdash; March 24</span>
+          <div class="episode-title">The Bearing</div>
+          <div class="episode-desc">What is a bearing? Orientation before action.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode3.html">
+          <img src="assets/images/ep3_thumb.png" alt="Episode 3" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 3 &mdash; March 24</span>
+          <div class="episode-title">The Field</div>
+          <div class="episode-desc">Invisible structure. Alignment without command.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode4.html">
+          <img src="assets/images/ep4_thumb.png" alt="Episode 4" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 4 &mdash; March 25</span>
+          <div class="episode-title">Informational Friction</div>
+          <div class="episode-desc">Friction is infrastructure, not overhead.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode5.html">
+          <img src="assets/images/ep5_thumb.png" alt="Episode 5" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 5 &mdash; March 27</span>
+          <div class="episode-title">Voidcartography</div>
+          <div class="episode-desc">Mapping the exact shape of what's missing.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode6.html">
+          <img src="assets/images/ep6_thumb.png" alt="Episode 6" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 6 &mdash; March 28</span>
+          <div class="episode-title">The Crew</div>
+          <div class="episode-desc">Four fixed bearings. A machine that produces a field.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode7.html">
+          <img src="assets/images/ep7_thumb.png" alt="Episode 7A" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 7A &mdash; March 28</span>
+          <div class="episode-title">The Minimum Solid</div>
+          <div class="episode-desc">Why four. The geometric threshold for enclosure.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode7b.html">
+          <img src="assets/slides/bearingfield_architecture_p1.png" alt="Episode 7B" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 7B &mdash; March 29</span>
+          <div class="episode-title">The Bearing of the Field</div>
+          <div class="episode-desc">Where geometry becomes force.</div>
+        </div>
+      </div>
+      <div class="episode-card reveal">
+        <a class="episode-thumb-wrap" href="episode7c.html">
+          <img src="assets/slides/the_architecture_of_alignment_p1.png" alt="Episode 7C" />
+          <div class="play-btn"></div>
+        </a>
+        <div class="episode-info">
+          <span class="episode-tag">Episode 7C &mdash; March 29</span>
+          <div class="episode-title">The Engineering Blueprint</div>
+          <div class="episode-desc">Six layers. One blueprint. How the Bearingfield is built.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <blockquote class="pull-quote reveal">
+    &ldquo;One bearing gives you a line. Two gives you a fix. Three gives you confidence. Four gives you a solid. Hold the bearing. Create the field. See you Monday.&rdquo;
+  </blockquote>
+
+  <div style="text-align:center;padding:2rem">
+    <a href="index.html" style="color:var(--gold);text-decoration:none;font-family:'Space Mono',monospace;font-size:0.8rem;letter-spacing:0.1em">&larr; BACK TO HOME</a>
+    <span style="color:var(--text);opacity:0.3;margin:0 1.5rem">|</span>
+    <span style="color:var(--text);opacity:0.4;font-family:'Space Mono',monospace;font-size:0.8rem;letter-spacing:0.1em">WEEK 2: THE PROBLEM &mdash; COMING MONDAY</span>
+  </div>
+
+  <footer>
+    <div class="footer-brand">BEARINGFIELD</div>
+    <div class="footer-tagline">Hold the bearing. Create the field.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://www.youtube.com/@ALLEGORYchannel" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/uplink_earth" target="_blank" rel="noopener">X</a>
+      <a href="mailto:ag-earth@ag-earth.com">Contact</a>
+    </div>
+    <div class="footer-copy">Bearingfield Solutions &mdash; Week 1 Complete &mdash; The Hook Is Set.</div>
+  </footer>
+
+  <script>
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')});},{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+  </script>
+</body>
+</html>
