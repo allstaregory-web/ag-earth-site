@@ -758,7 +758,8 @@
     var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img'),lbNav=document.getElementById('lightbox-nav'),lbCounter=document.getElementById('lb-counter'),lbBg=document.getElementById('lightbox-bg');
     var currentDeck=null,currentPage=1,totalPages=0;
     function closeLightbox(){lb.classList.remove('active');lbNav.classList.remove('active');currentDeck=null;}
-    function buildSlidePath(prefix,page){if(prefix==='bearing_page')return'assets/slides/bearing_page_'+page+'.jpg';if(prefix==='bearingfield_1'||prefix==='bearingfield_blueprint')return'assets/slides/'+prefix+'_p'+page+'.png';return'assets/slides/'+prefix+'_p'+page+'.jpg';}
+    var pngDecks=['bearingfield_1','bearingfield_blueprint','engineering_friction','informational_friction','voidcartography','the_minimum_solid','the_tetrahedral_machine','the_bearingfield','bearingfield_synthesis','bearingfield_architecture','the_architecture_of_alignment','the_bearingfield_2'];
+    function buildSlidePath(prefix,page){if(prefix==='bearing_page')return'assets/slides/bearing_page_'+page+'.jpg';if(pngDecks.indexOf(prefix)!==-1)return'assets/slides/'+prefix+'_p'+page+'.png';return'assets/slides/'+prefix+'_p'+page+'.jpg';}
     function showSlide(page){if(page<1||page>totalPages)return;currentPage=page;lbImg.src=buildSlidePath(currentDeck,currentPage);lbCounter.textContent=currentPage+' / '+totalPages;}
     document.querySelectorAll('.zoomable').forEach(function(img){img.addEventListener('click',function(){currentDeck=null;lbImg.src=img.src;lbImg.alt=img.alt;lbNav.classList.remove('active');lb.classList.add('active');});});
     document.querySelectorAll('.zoomable-card').forEach(function(card){card.addEventListener('click',function(){currentDeck=card.dataset.prefix;totalPages=parseInt(card.dataset.pages);currentPage=1;showSlide(1);lbNav.classList.add('active');lb.classList.add('active');});});
