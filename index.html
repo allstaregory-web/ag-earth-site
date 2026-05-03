@@ -3,1205 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bearingfield Solutions | Electrical Construction Operating Fields</title>
-  <meta name="description" content="Bearingfield Solutions provides electrical construction engineering support, project documentation, workflow systems, and reality capture services from estimating through closeout." />
-  <meta property="og:title" content="Bearingfield Solutions" />
-  <meta property="og:description" content="Hold the bearing. Create the field. Feel the potential." />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KBWXCK8QS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0KBWXCK8QS');
+  </script>
+  <title>Bearingfield Solutions &mdash; Hold the Bearing. Create the Field.</title>
+  <meta name="description" content="Bearingfield Solutions — full-service engineering for electrical construction. Engineering drawings, 3D pre-construction, construction documentation, and engineering problem-solving." />
+  <meta property="og:title" content="Bearingfield Solutions &mdash; Hold the Bearing. Create the Field." />
+  <meta property="og:description" content="Full-service engineering for electrical construction. Proprietary technology. Engineering-first approach." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bearingfieldsolutions.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      color-scheme: dark;
-      --ink: #090b0d;
-      --panel: #101418;
-      --panel-2: #151b20;
-      --line: rgba(229, 235, 225, 0.14);
-      --line-strong: rgba(229, 235, 225, 0.28);
-      --text: #e8ece4;
-      --muted: #a9b2aa;
-      --quiet: #768078;
-      --amber: #e5b84b;
-      --cyan: #58c7d8;
-      --green: #76b97a;
-      --risk: #d77852;
-      --paper: #d9d6c8;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background:
-        linear-gradient(180deg, rgba(9, 11, 13, 0.82), rgba(9, 11, 13, 1) 38rem),
-        var(--ink);
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      background-image:
-        linear-gradient(rgba(229, 235, 225, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(229, 235, 225, 0.045) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 72%);
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(229, 184, 75, 0.16), transparent 22rem),
-        radial-gradient(circle at 82% 20%, rgba(88, 199, 216, 0.12), transparent 24rem),
-        linear-gradient(135deg, rgba(118, 185, 122, 0.06), transparent 32rem);
-      pointer-events: none;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(9, 11, 13, 0.82);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      min-height: 64px;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line-strong);
-      background: linear-gradient(145deg, rgba(229, 184, 75, 0.16), rgba(88, 199, 216, 0.08));
-    }
-
-    .brand-mark::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--amber);
-      box-shadow:
-        0 0 0 5px rgba(229, 184, 75, 0.09),
-        0 0 28px rgba(229, 184, 75, 0.55);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      color: var(--ink) !important;
-      background: var(--amber);
-      padding: 9px 12px;
-      font-weight: 800;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 88svh;
-      display: grid;
-      align-items: center;
-      overflow: hidden;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .field-visual {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.94;
-    }
-
-    .field-visual::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(9, 11, 13, 0.98) 0%, rgba(9, 11, 13, 0.76) 38%, rgba(9, 11, 13, 0.36) 100%),
-        linear-gradient(180deg, transparent 0%, rgba(9, 11, 13, 0.82) 100%);
-      z-index: 2;
-    }
-
-    .loose-doc,
-    .bearing-node,
-    .route-line,
-    .status-strip {
-      position: absolute;
-      z-index: 1;
-    }
-
-    .loose-doc {
-      width: 170px;
-      min-height: 86px;
-      padding: 12px;
-      border: 1px solid rgba(217, 214, 200, 0.22);
-      background: rgba(217, 214, 200, 0.08);
-      color: rgba(232, 236, 228, 0.76);
-      box-shadow: var(--shadow);
-      transform: rotate(var(--r));
-    }
-
-    .loose-doc strong,
-    .field-card strong {
-      display: block;
-      color: var(--text);
-      font-size: 0.76rem;
-      margin-bottom: 6px;
-    }
-
-    .loose-doc span,
-    .field-card span {
-      display: block;
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 0.66rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    .doc-1 { top: 16%; right: 36%; --r: -6deg; }
-    .doc-2 { top: 28%; right: 14%; --r: 5deg; }
-    .doc-3 { top: 55%; right: 31%; --r: 4deg; }
-    .doc-4 { top: 64%; right: 10%; --r: -4deg; }
-    .doc-5 { top: 42%; right: 45%; --r: 7deg; }
-
-    .route-line {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(88, 199, 216, 0.8), rgba(229, 184, 75, 0.85), transparent);
-      transform-origin: left center;
-      opacity: 0.75;
-    }
-
-    .line-1 { width: 340px; top: 31%; right: 12%; transform: rotate(18deg); }
-    .line-2 { width: 410px; top: 49%; right: 20%; transform: rotate(-12deg); }
-    .line-3 { width: 320px; top: 64%; right: 18%; transform: rotate(10deg); }
-    .line-4 { width: 240px; top: 22%; right: 32%; transform: rotate(68deg); }
-
-    .bearing-node {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--amber);
-      box-shadow:
-        0 0 0 7px rgba(229, 184, 75, 0.12),
-        0 0 34px rgba(229, 184, 75, 0.55);
-    }
-
-    .node-1 { top: 30%; right: 29%; }
-    .node-2 { top: 49%; right: 23%; background: var(--cyan); }
-    .node-3 { top: 63%; right: 39%; background: var(--green); }
-
-    .status-strip {
-      right: 6%;
-      bottom: 8%;
-      width: 420px;
-      max-width: 36vw;
-      display: grid;
-      gap: 8px;
-      z-index: 3;
-    }
-
-    .field-card {
-      border: 1px solid rgba(232, 236, 228, 0.18);
-      background: rgba(16, 20, 24, 0.76);
-      padding: 10px 12px;
-      box-shadow: var(--shadow);
-    }
-
-    .field-card[data-state="ready"] {
-      border-left: 3px solid var(--green);
-    }
-
-    .field-card[data-state="signal"] {
-      border-left: 3px solid var(--cyan);
-    }
-
-    .field-card[data-state="risk"] {
-      border-left: 3px solid var(--risk);
-    }
-
-    .hero-inner {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-      padding: 96px 0 70px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin: 0 0 18px;
-      color: var(--amber);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      font-weight: 800;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: var(--amber);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1 {
-      max-width: 780px;
-      margin-bottom: 16px;
-      font-size: clamp(3.2rem, 8.8vw, 8.2rem);
-      line-height: 0.86;
-      letter-spacing: 0;
-      color: var(--text);
-    }
-
-    .slogan {
-      margin-bottom: 24px;
-      color: var(--amber);
-      font-size: clamp(1.05rem, 2.1vw, 1.55rem);
-      font-weight: 800;
-    }
-
-    .hero-copy {
-      max-width: 650px;
-      margin-bottom: 30px;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.35vw, 1.18rem);
-    }
-
-    .hero-actions,
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .button {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border: 1px solid var(--line-strong);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 0.9rem;
-      background: rgba(232, 236, 228, 0.06);
-    }
-
-    .button.primary {
-      color: var(--ink);
-      background: var(--amber);
-      border-color: var(--amber);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(232, 236, 228, 0.5);
-    }
-
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      max-width: var(--max);
-      margin: -24px auto 0;
-      width: min(var(--max), calc(100% - 48px));
-      border: 1px solid var(--line);
-      background: var(--line);
-      position: relative;
-      z-index: 5;
-    }
-
-    .proof-cell {
-      background: rgba(16, 20, 24, 0.94);
-      padding: 18px;
-      min-height: 104px;
-    }
-
-    .proof-cell b {
-      display: block;
-      color: var(--text);
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-    }
-
-    .proof-cell span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    main {
-      position: relative;
-      z-index: 4;
-    }
-
-    .section {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 88px 24px;
-    }
-
-    .section.compact {
-      padding-top: 56px;
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.65fr);
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 34px;
-    }
-
-    h2 {
-      margin-bottom: 0;
-      color: var(--text);
-      font-size: clamp(2rem, 4.2vw, 4.7rem);
-      line-height: 0.96;
-      letter-spacing: 0;
-    }
-
-    .section-lede {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .field-map {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .map-column {
-      min-height: 430px;
-      padding: 22px;
-      background: rgba(16, 20, 24, 0.9);
-    }
-
-    .map-column h3 {
-      color: var(--text);
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-    }
-
-    .artifact-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .artifact-list li {
-      display: grid;
-      grid-template-columns: 86px 1fr;
-      gap: 12px;
-      align-items: start;
-      min-height: 56px;
-      padding: 11px;
-      border: 1px solid rgba(232, 236, 228, 0.12);
-      background: rgba(232, 236, 228, 0.035);
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .tag {
-      display: inline-flex;
-      width: fit-content;
-      padding: 4px 7px;
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 0.66rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: var(--paper);
-    }
-
-    .tag.signal { background: var(--cyan); }
-    .tag.ready { background: var(--green); }
-    .tag.risk { background: var(--risk); color: #160d08; }
-    .tag.bearing { background: var(--amber); }
-
-    .bearing-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .bearing {
-      min-height: 250px;
-      padding: 18px;
-      background: rgba(16, 20, 24, 0.92);
-    }
-
-    .bearing h3 {
-      margin-bottom: 12px;
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .bearing p {
-      margin-bottom: 14px;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    .bearing ul,
-    .service ul,
-    .engagement-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 8px;
-    }
-
-    .bearing li,
-    .service li,
-    .engagement-list li {
-      position: relative;
-      padding-left: 16px;
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .bearing li::before,
-    .service li::before,
-    .engagement-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.72em;
-      width: 6px;
-      height: 1px;
-      background: var(--amber);
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .service {
-      border: 1px solid var(--line);
-      background: rgba(16, 20, 24, 0.88);
-      padding: 20px;
-      min-height: 380px;
-    }
-
-    .service-number {
-      display: block;
-      margin-bottom: 34px;
-      color: var(--quiet);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 0.74rem;
-    }
-
-    .service h3 {
-      min-height: 52px;
-      color: var(--text);
-      font-size: 1.08rem;
-      line-height: 1.18;
-      margin-bottom: 12px;
-    }
-
-    .service p {
-      color: var(--muted);
-      font-size: 0.88rem;
-      margin-bottom: 18px;
-    }
-
-    .operator {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.55fr);
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .operator-copy,
-    .operator-panel {
-      background: rgba(16, 20, 24, 0.94);
-      padding: 30px;
-    }
-
-    .operator-copy p {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .operator-panel {
-      display: grid;
-      align-content: center;
-      gap: 12px;
-    }
-
-    .spec-row {
-      display: grid;
-      grid-template-columns: 124px 1fr;
-      gap: 12px;
-      border-bottom: 1px solid var(--line);
-      padding: 11px 0;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    .spec-row b {
-      color: var(--text);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-    }
-
-    .engagement {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .step {
-      min-height: 250px;
-      padding: 22px;
-      background: rgba(16, 20, 24, 0.92);
-    }
-
-    .step h3 {
-      color: var(--text);
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 0.88rem;
-      margin-bottom: 0;
-    }
-
-    .cta {
-      max-width: var(--max);
-      margin: 0 auto 72px;
-      padding: 46px 24px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(229, 184, 75, 0.13), transparent 45%),
-        linear-gradient(315deg, rgba(88, 199, 216, 0.10), transparent 48%),
-        rgba(16, 20, 24, 0.94);
-      box-shadow: var(--shadow);
-    }
-
-    .cta-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.45fr);
-      gap: 34px;
-      align-items: end;
-    }
-
-    .cta h2 {
-      max-width: 760px;
-      margin-bottom: 18px;
-    }
-
-    .cta p {
-      max-width: 680px;
-      color: var(--muted);
-    }
-
-    .contact-box {
-      border-left: 1px solid var(--line-strong);
-      padding-left: 24px;
-    }
-
-    .contact-box a {
-      display: block;
-      color: var(--amber);
-      font-weight: 800;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-box span {
-      display: block;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 24px;
-      color: var(--quiet);
-      font-size: 0.8rem;
-    }
-
-    .footer-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-inner {
-        padding-top: 82px;
-        padding-bottom: 132px;
-      }
-
-      .field-visual::before {
-        background:
-          linear-gradient(180deg, rgba(9, 11, 13, 0.72), rgba(9, 11, 13, 0.9)),
-          linear-gradient(90deg, rgba(9, 11, 13, 0.88), rgba(9, 11, 13, 0.62));
-      }
-
-      .loose-doc {
-        width: 136px;
-        min-height: 72px;
-        padding: 9px;
-      }
-
-      .doc-1 { top: 17%; right: -6%; }
-      .doc-2 { top: 44%; right: 4%; }
-      .doc-3 { top: 66%; right: 38%; }
-      .doc-4,
-      .doc-5,
-      .line-4 {
-        display: none;
-      }
-
-      .status-strip {
-        left: 24px;
-        right: 24px;
-        bottom: 24px;
-        width: auto;
-        max-width: none;
-        grid-template-columns: 1fr;
-      }
-
-      .status-strip .field-card:nth-child(3) {
-        display: none;
-      }
-
-      .hero-proof,
-      .section-header,
-      .field-map,
-      .bearing-grid,
-      .services,
-      .operator,
-      .engagement,
-      .cta-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .proof-cell {
-        min-height: auto;
-      }
-
-      .map-column {
-        min-height: auto;
-      }
-
-      .bearing,
-      .service,
-      .step {
-        min-height: auto;
-      }
-
-      .service h3 {
-        min-height: auto;
-      }
-
-      .contact-box {
-        border-left: 0;
-        padding-left: 0;
-        border-top: 1px solid var(--line-strong);
-        padding-top: 24px;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .nav {
-        padding: 0 16px;
-      }
-
-      .brand {
-        font-size: 0.88rem;
-      }
-
-      .hero-inner,
-      .hero-proof {
-        width: calc(100% - 32px);
-      }
-
-      .hero-actions,
-      .cta-actions {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .status-strip {
-        display: none;
-      }
-
-      .section {
-        padding: 64px 16px;
-      }
-
-      .artifact-list li {
-        grid-template-columns: 1fr;
-      }
-
-      .operator-copy,
-      .operator-panel {
-        padding: 22px;
-      }
-
-      .spec-row {
-        grid-template-columns: 1fr;
-      }
-
-      .cta {
-        margin: 0 16px 56px;
-      }
-    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--navy:#0a1628;--navy-mid:#0e1c30;--gold:#c9a84c;--gold-bright:#e8c55a;--gold-glow:rgba(201,168,76,0.15);--border:rgba(201,168,76,0.18);--text:#9aabbc;--text-bright:#cdd8e4;--white:#edf2f7}
+    html{scroll-behavior:smooth}
+    body{background:var(--navy);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;line-height:1.6}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);background:rgba(10,22,40,0.88);border-bottom:1px solid var(--border)}
+    .nav-brand{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;text-shadow:0 0 20px rgba(201,168,76,0.4);text-decoration:none}
+    .nav-links{display:flex;gap:1.8rem;list-style:none}
+    .nav-links a{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--text);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;opacity:0.6;transition:all 0.3s}
+    .nav-links a:hover{color:var(--gold);opacity:1}
+
+    /* HERO */
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(201,168,76,0.05) 0%,transparent 65%);pointer-events:none}
+    .hero-tagline{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:2rem;animation:fadeUp 1s ease 0.2s both}
+    .hero-tagline .gold{color:var(--gold);text-shadow:0 0 30px rgba(201,168,76,0.5)}
+    .hero-sub{font-size:clamp(1rem,2vw,1.2rem);font-weight:300;color:var(--text);max-width:620px;margin:0 auto 2.5rem;line-height:1.8;animation:fadeUp 1s ease 0.4s both}
+    .hero-cta{display:inline-flex;align-items:center;gap:0.75rem;padding:0.9rem 2.2rem;background:transparent;color:var(--gold);font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);border-radius:4px;transition:all 0.3s ease;animation:fadeUp 1s ease 0.6s both}
+    .hero-cta:hover{background:var(--gold);color:var(--navy);box-shadow:0 0 40px rgba(201,168,76,0.4)}
+
+    /* SECTIONS */
+    .section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+    .section-label{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;opacity:0.7}
+    .section-title{font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;color:var(--white);margin-bottom:1rem;line-height:1.2}
+    .section-body{font-size:1rem;line-height:1.8;color:var(--text);max-width:680px}
+    .divider{max-width:1100px;margin:0 auto;border:none;border-top:1px solid var(--border)}
+
+    /* SERVICE CARDS */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-top:2rem}
+    .service-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all 0.3s}
+    .service-card:hover{border-color:var(--gold);box-shadow:0 0 25px var(--gold-glow);transform:translateY(-2px)}
+    .service-icon{font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--gold);opacity:0.3;margin-bottom:0.8rem}
+    .service-title{font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+    .service-body{font-size:0.88rem;color:var(--text);line-height:1.75;opacity:0.75}
+
+    /* QUOTE */
+    .quote-section{text-align:center;padding:4.5rem 2rem;background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.025),transparent);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .quote-text{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:400;font-style:italic;color:var(--white);max-width:680px;margin:0 auto 1.2rem;line-height:1.5}
+    .quote-attr{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;color:var(--gold);opacity:0.5}
+
+    /* APPROACH CARDS */
+    .approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem}
+    .approach-card{padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,0.02);text-align:center;transition:all 0.3s}
+    .approach-card:hover{border-color:var(--gold);box-shadow:0 0 20px var(--gold-glow)}
+    .approach-num{font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--gold);opacity:0.25;margin-bottom:0.5rem}
+    .approach-title{font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.4rem}
+    .approach-body{font-size:0.82rem;color:var(--text);line-height:1.7;opacity:0.7}
+
+    /* CONTACT */
+    .contact-section{max-width:600px;margin:0 auto;padding:5rem 2rem;text-align:center}
+    .contact-detail{font-family:'Space Mono',monospace;font-size:0.88rem;color:var(--text-bright);margin-top:1.5rem;line-height:2.2}
+    .contact-detail a{color:var(--gold);text-decoration:none;transition:all 0.3s}
+    .contact-detail a:hover{color:var(--gold-bright);text-shadow:0 0 10px rgba(201,168,76,0.3)}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+    .footer-brand{font-family:'Space Mono',monospace;font-size:0.85rem;font-weight:700;color:var(--gold);letter-spacing:0.15em;margin-bottom:0.4rem}
+    .footer-tagline{font-size:0.75rem;color:var(--text);opacity:0.4;margin-bottom:0.8rem}
+    .footer-copy{margin-top:0.8rem;font-size:0.6rem;opacity:0.25;letter-spacing:0.1em}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.7s ease,transform 0.7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:768px){nav{padding:0.7rem 1rem}.nav-links{display:none}.services-grid{grid-template-columns:1fr}.approach-grid{grid-template-columns:1fr 1fr}.section{padding:3.5rem 1.25rem}}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Bearingfield Solutions home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Bearingfield Solutions</span>
-      </a>
-      <div class="nav-links">
-        <a href="#field">The Field</a>
-        <a href="#bearings">Bearings</a>
-        <a href="#services">Services</a>
-        <a href="#engage">Start</a>
-        <a class="nav-cta" href="mailto:info@bearingfieldsolutions.com?subject=Capability%20Statement%20Request">Request Capability</a>
-      </div>
-    </nav>
-  </header>
 
-  <section class="hero" id="top">
-    <div class="field-visual" aria-hidden="true">
-      <div class="loose-doc doc-1"><strong>Estimate Rev 04</strong><span>scope note open<br />allowance not tied to PO</span></div>
-      <div class="loose-doc doc-2"><strong>RFI 022</strong><span>answer affects E-201<br />owner response pending</span></div>
-      <div class="loose-doc doc-3"><strong>PO Draft</strong><span>gear release unknown<br />delivery not mapped</span></div>
-      <div class="loose-doc doc-4"><strong>Closeout List</strong><span>manuals missing<br />as-built owner unclear</span></div>
-      <div class="loose-doc doc-5"><strong>Schedule Strip</strong><span>rough-in shift<br />crew impact unpriced</span></div>
-      <div class="route-line line-1"></div>
-      <div class="route-line line-2"></div>
-      <div class="route-line line-3"></div>
-      <div class="route-line line-4"></div>
-      <div class="bearing-node node-1"></div>
-      <div class="bearing-node node-2"></div>
-      <div class="bearing-node node-3"></div>
-      <div class="status-strip">
-        <div class="field-card" data-state="risk"><strong>Signal detected</strong><span>drawing revision and RFI state disagree</span></div>
-        <div class="field-card" data-state="signal"><strong>Bearing placed</strong><span>scope, PO, and schedule get one owner</span></div>
-        <div class="field-card" data-state="ready"><strong>Field forming</strong><span>planned job, committed job, built job connected</span></div>
-      </div>
-    </div>
+  <nav>
+    <a class="nav-brand" href="index.html">BEARINGFIELD SOLUTIONS</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="hero-inner">
-      <p class="eyebrow">Electrical construction support</p>
-      <h1>Bearingfield Solutions</h1>
-      <p class="slogan">Hold the bearing. Create the field. Feel the potential.</p>
-      <p class="hero-copy">
-        We help electrical contractors turn scattered project information into a governed operating field:
-        estimates, drawings, specifications, POs, RFIs, submittals, schedule, safety, and closeout connected
-        from bid through delivery.
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href="mailto:info@bearingfieldsolutions.com?subject=Capability%20Statement%20Request">Request a Capability Statement</a>
-        <a class="button" href="mailto:info@bearingfieldsolutions.com?subject=Project%20Assessment%20Request">Ask us about your project</a>
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero-tagline">Hold the <span class="gold">Bearing.</span><br/>Create the <span class="gold">Field.</span></h1>
+    <p class="hero-sub">Full-service engineering for electrical construction. Proprietary technology. Engineering-first approach.</p>
+    <a class="hero-cta" href="#contact">Get in Touch &rarr;</a>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SERVICES -->
+  <section class="section reveal" id="services">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">What We Do</h2>
+    <p class="section-body">Engineering solutions for electrical construction &mdash; from pre-construction through commissioning. We solve problems that cost time and money, using proprietary technology built for the way construction actually works.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">01</div>
+        <div class="service-title">Engineering Drawings &amp; Contract Documents</div>
+        <div class="service-body">Complete engineering drawing packages &mdash; from single-line diagrams to full contract sets. Coordination drawings, shop drawings, and as-built documentation.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">02</div>
+        <div class="service-title">3D Virtual Pre-Construction</div>
+        <div class="service-body">Full virtual site pre-construction and coordination. We model the site before it&rsquo;s built so problems get solved on screen, not in the field.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">03</div>
+        <div class="service-title">Construction Documentation</div>
+        <div class="service-body">Point-to-point wiring documentation, panel schedules, termination lists, and field wiring packages. Every wire accounted for before a single conductor is pulled.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">04</div>
+        <div class="service-title">Engineering Problem-Solving</div>
+        <div class="service-body">Complex coordination challenges, submittal processing, design-assist, and custom engineering solutions. If it involves electrical construction, we can figure it out.</div>
       </div>
     </div>
   </section>
 
-  <div class="hero-proof" aria-label="Bearingfield operating scope">
-    <div class="proof-cell">
-      <b>Starts at the estimate</b>
-      <span>Scope, assumptions, exclusions, alternates, and vendor signals become project control points.</span>
-    </div>
-    <div class="proof-cell">
-      <b>Carries through delivery</b>
-      <span>Drawings, RFIs, submittals, POs, changes, cost, and schedule stay tied together.</span>
-    </div>
-    <div class="proof-cell">
-      <b>Ends with usable closeout</b>
-      <span>As-builts, manuals, training, safety records, and turnover material are not left for the end.</span>
-    </div>
+  <hr class="divider" />
+
+  <!-- QUOTE -->
+  <div class="quote-section reveal">
+    <p class="quote-text">&ldquo;The bearing is not a direction. It is a relationship between where you stand and where the field holds.&rdquo;</p>
+    <p class="quote-attr">Bearingfield Solutions</p>
   </div>
 
-  <main>
-    <section class="section reveal compact" id="field">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">The operating field</p>
-          <h2>Connect the planned job, the committed job, and the built job.</h2>
-        </div>
-        <p class="section-lede">
-          A project field is not a folder, dashboard, or slogan. It is a controlled structure where project
-          documents, decisions, roles, and obligations can be seen together.
-        </p>
-      </div>
+  <!-- APPROACH -->
+  <section class="section reveal" id="approach">
+    <p class="section-label">Approach</p>
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-body">Engineering problems are information problems. We use proprietary technology to process construction data faster and more accurately than traditional methods &mdash; then deliver real engineering output you can build from.</p>
 
-      <div class="field-map">
-        <div class="map-column">
-          <h3>Before the field</h3>
-          <ul class="artifact-list">
-            <li><span class="tag risk">stale</span><span>Drawing set and field condition no longer match.</span></li>
-            <li><span class="tag risk">loose</span><span>POs are committed without clear scope and schedule context.</span></li>
-            <li><span class="tag risk">open</span><span>RFIs and submittals move, but the affected work does not.</span></li>
-            <li><span class="tag risk">late</span><span>Closeout starts after the job has already lost its memory.</span></li>
-          </ul>
-        </div>
-        <div class="map-column">
-          <h3>Bearingfield action</h3>
-          <ul class="artifact-list">
-            <li><span class="tag signal">detect</span><span>Find missing, stale, conflicting, and unowned project signals.</span></li>
-            <li><span class="tag bearing">place</span><span>Assign role-linked bearings for estimating, PM, field, engineering, and executive view.</span></li>
-            <li><span class="tag signal">route</span><span>Connect documents, decisions, cost, schedule, and responsibility.</span></li>
-            <li><span class="tag bearing">produce</span><span>Turn the field into buildable documentation and usable project controls.</span></li>
-          </ul>
-        </div>
-        <div class="map-column">
-          <h3>After the field</h3>
-          <ul class="artifact-list">
-            <li><span class="tag ready">clear</span><span>The estimate, budget, POs, and schedule can be read together.</span></li>
-            <li><span class="tag ready">current</span><span>The team sees the current drawing state and linked RFI/submittal impacts.</span></li>
-            <li><span class="tag ready">owned</span><span>Tasks and deliverables have visible responsibility.</span></li>
-            <li><span class="tag ready">kept</span><span>Closeout and lessons learned are built while the work is still alive.</span></li>
-          </ul>
-        </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-num">01</div>
+        <div class="approach-title">Understand</div>
+        <div class="approach-body">We study the project &mdash; drawings, submittals, specifications &mdash; and identify what needs to be solved.</div>
       </div>
-    </section>
+      <div class="approach-card">
+        <div class="approach-num">02</div>
+        <div class="approach-title">Process</div>
+        <div class="approach-body">Proprietary technology processes the data &mdash; cross-referencing, coordinating, and building the engineering model.</div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">03</div>
+        <div class="approach-title">Deliver</div>
+        <div class="approach-body">You receive production-ready engineering documents &mdash; drawings, schedules, wiring packages &mdash; ready to build from.</div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">04</div>
+        <div class="approach-title">Support</div>
+        <div class="approach-body">Questions in the field, revisions, coordination issues &mdash; we stay with the project through construction.</div>
+      </div>
+    </div>
+  </section>
 
-    <section class="section reveal" id="bearings">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">Bearings by role</p>
-          <h2>Each role gets a console. The job stays one field.</h2>
-        </div>
-        <p class="section-lede">
-          Bearingfield creates the environment and the instruments. Estimators, PMs, engineers, foremen,
-          and executives should not be fighting separate truths.
-        </p>
-      </div>
+  <hr class="divider" />
 
-      <div class="bearing-grid">
-        <article class="bearing">
-          <h3>Estimator</h3>
-          <p>Bid logic becomes the first project control layer.</p>
-          <ul>
-            <li>Takeoff and scope notes</li>
-            <li>Spec lookup and assumptions</li>
-            <li>Vendor quote comparison</li>
-            <li>Bid-to-delivery handoff</li>
-          </ul>
-        </article>
-        <article class="bearing">
-          <h3>Project Manager</h3>
-          <p>Cost, schedule, procurement, and changes stay connected.</p>
-          <ul>
-            <li>Committed cost and PO state</li>
-            <li>RFI and submittal control</li>
-            <li>Change and schedule impact</li>
-            <li>Closeout progress</li>
-          </ul>
-        </article>
-        <article class="bearing">
-          <h3>Engineer / Drafter</h3>
-          <p>Design and coordination output stays tied to field reality.</p>
-          <ul>
-            <li>Coordination drawings</li>
-            <li>Point-to-point wiring</li>
-            <li>Panel schedule documentation</li>
-            <li>As-built workflows</li>
-          </ul>
-        </article>
-        <article class="bearing">
-          <h3>Foreman</h3>
-          <p>The field gets usable views instead of a document maze.</p>
-          <ul>
-            <li>Current drawing context</li>
-            <li>Quantities and material calls</li>
-            <li>Daily progress capture</li>
-            <li>Safety and checklist flow</li>
-          </ul>
-        </article>
-        <article class="bearing">
-          <h3>Executive</h3>
-          <p>Leadership can see risk without chasing every folder.</p>
-          <ul>
-            <li>Margin and drift visibility</li>
-            <li>Project and portfolio questions</li>
-            <li>Go/no-go constraints</li>
-            <li>Owner-level field view</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="services">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">Commercial entry points</p>
-          <h2>Start with one problem. Build the field around it.</h2>
-        </div>
-        <p class="section-lede">
-          Bearingfield Solutions is available for scoped construction support work. The service door can be
-          documentation, controls, training, capture, or a combined project assessment.
-        </p>
-      </div>
-
-      <div class="services">
-        <article class="service">
-          <span class="service-number">01 / Documentation</span>
-          <h3>Electrical engineering documentation</h3>
-          <p>Production support for teams that need drawings and packages people can build from.</p>
-          <ul>
-            <li>Electrical coordination drawings</li>
-            <li>Point-to-point wiring diagrams</li>
-            <li>Panel schedule documentation</li>
-            <li>Submittal and as-built support</li>
-          </ul>
-        </article>
-        <article class="service">
-          <span class="service-number">02 / Controls</span>
-          <h3>Project controls and document flow</h3>
-          <p>Structure for the project information that usually lives across inboxes, folders, and spreadsheets.</p>
-          <ul>
-            <li>RFI, submittal, and change logs</li>
-            <li>PO and committed-cost tracking</li>
-            <li>Drawing revision control</li>
-            <li>Closeout organization</li>
-          </ul>
-        </article>
-        <article class="service">
-          <span class="service-number">03 / Training</span>
-          <h3>Workflow, training, and safety systems</h3>
-          <p>Employee-facing instruction built from the client company, its language, and its real workflows.</p>
-          <ul>
-            <li>Themed safety and toolbox programs</li>
-            <li>Tool and document tutorials</li>
-            <li>SharePoint and Teams workflows</li>
-            <li>Recurring owner-approved training drops</li>
-          </ul>
-        </article>
-        <article class="service">
-          <span class="service-number">04 / Capture</span>
-          <h3>Reality capture and field documentation</h3>
-          <p>Visual project memory for coordination, progress, claims support, and closeout.</p>
-          <ul>
-            <li>360 walkthrough documentation</li>
-            <li>Scan planning and capture support</li>
-            <li>Progress record organization</li>
-            <li>Visual turnover packages</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="operator">
-        <div class="operator-copy">
-          <p class="eyebrow">Operator built</p>
-          <h2>Built from electrical construction work, not generic software theater.</h2>
-          <p>
-            Bearingfield Solutions sells practical engineering and project support. Proprietary internal tools
-            help organize information, find mismatches, and produce deliverables, but the public promise is
-            simple: cleaner project control and buildable output for electrical contractors.
-          </p>
-          <p>
-            Client names, private project data, and internal system architecture stay private. Public examples can
-            be prepared as clean-room demonstrations when a buyer needs to see the style of output.
-          </p>
-        </div>
-        <div class="operator-panel" aria-label="Public proof boundaries">
-          <div class="spec-row"><b>Public</b><span>Services, deliverables, clean-room samples, capability statement.</span></div>
-          <div class="spec-row"><b>Private</b><span>Client data, employer details, live internal systems, raw event logs.</span></div>
-          <div class="spec-row"><b>Output</b><span>Drawings, logs, workflows, training surfaces, capture records, closeout packages.</span></div>
-          <div class="spec-row"><b>Method</b><span>Structured field, role bearings, practical engineering judgment.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="engage">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">How to start</p>
-          <h2>Low-friction first contact. Scoped work after fit is clear.</h2>
-        </div>
-        <p class="section-lede">
-          The best first step is not a cold upload or a vague consultation. Start with a capability request or
-          a short description of the project problem.
-        </p>
-      </div>
-
-      <div class="engagement">
-        <article class="step">
-          <span class="tag bearing">01</span>
-          <h3>Request capability</h3>
-          <p>Ask for a capability statement to understand fit, service lanes, and available support.</p>
-        </article>
-        <article class="step">
-          <span class="tag signal">02</span>
-          <h3>Describe the project</h3>
-          <p>Share the project type, deadline, pain point, and what outcome would make the job easier.</p>
-        </article>
-        <article class="step">
-          <span class="tag ready">03</span>
-          <h3>Assess the field</h3>
-          <p>We identify the documents, decisions, roles, and deliverables that need to be brought under control.</p>
-        </article>
-        <article class="step">
-          <span class="tag bearing">04</span>
-          <h3>Scope the work</h3>
-          <p>The result is a project-based deliverable, assessment, or support plan with a clear next step.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="cta reveal" aria-label="Contact Bearingfield Solutions">
-      <div class="cta-inner">
-        <div>
-          <p class="eyebrow">Available for scoping now</p>
-          <h2>Bring the messy job. We will help find the field.</h2>
-          <p>
-            Useful first messages include: project type, trade scope, deadline, current document state, and the
-            problem you need solved first.
-          </p>
-          <div class="cta-actions">
-            <a class="button primary" href="mailto:info@bearingfieldsolutions.com?subject=Capability%20Statement%20Request">Request a Capability Statement</a>
-            <a class="button" href="mailto:info@bearingfieldsolutions.com?subject=Project%20Assessment%20Request">Ask us about your project</a>
-          </div>
-        </div>
-        <div class="contact-box">
-          <a href="mailto:info@bearingfieldsolutions.com">info@bearingfieldsolutions.com</a>
-          <span>Bearingfield Solutions provides electrical construction engineering support, project documentation, workflow systems, and reality capture services.</span>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- CONTACT -->
+  <section class="contact-section reveal" id="contact">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let&rsquo;s Talk</h2>
+    <p class="section-body" style="max-width:500px;margin:0 auto">Have a project that needs engineering? We&rsquo;d like to hear about it.</p>
+    <div class="contact-detail">
+      <a href="mailto:info@bearingfieldsolutions.com">info@bearingfieldsolutions.com</a><br/>
+      bearingfieldsolutions.com
+    </div>
+  </section>
 
   <footer>
-    <div class="footer-inner">
-      <span>&copy; 2026 Bearingfield Solutions</span>
-      <span>Hold the bearing. Create the field. Feel the potential.</span>
-    </div>
+    <div class="footer-brand">BEARINGFIELD SOLUTIONS</div>
+    <div class="footer-tagline">Hold the bearing. Create the field.</div>
+    <div class="footer-copy">&copy; 2026 Bearingfield Solutions</div>
   </footer>
 
   <script>
+    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
